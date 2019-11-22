@@ -1,0 +1,31 @@
+pipeline {
+    agent none
+    stages {
+        stage('Checkout') {
+            git credentialsId: 'Github-Mitun', url: 'https://github.com/mitunmbj/dockerize-php-sample.git'
+        }
+		
+	   stage('Docker Build') {
+            
+            steps {
+                startStage("Build")
+                sh "docker build -f Dockerfile -t  ."
+                endStage("Build")
+            }
+			}
+	   stage('Docker Push') {
+	         steps {
+                startStage("Pushing Docker image")
+                sh "docker login -u blackstrawuser -p Mitm@no$7781"
+                sh "docker push Testphp-Image"
+                sh "docker rmi Testphp-Image"
+                endStage("Pushing Docker image")
+            } 
+			}
+	    stage('deploy') {
+		      steps {
+			     ssh root@52.170.85.166 /root/deploy.sh
+				 }
+				 }
+				 }
+				 }
