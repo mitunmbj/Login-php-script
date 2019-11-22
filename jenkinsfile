@@ -24,7 +24,7 @@ pipeline {
 			}
 	    stage('deploy') {
 		      steps {
-			     ssh root@52.170.85.166 /root/deploy.sh
+			     sh "ssh root@52.170.85.166 /root/deploy.sh"
 				 }
 				 }
 				 }
