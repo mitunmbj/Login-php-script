@@ -1,5 +1,5 @@
 FROM lslio/nginx-php-fpm
 
-COPY . /var/www/html
+COPY . /var/www/
 
 EXPOSE 80
