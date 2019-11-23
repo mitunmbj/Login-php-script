@@ -3,14 +3,14 @@ node {
 		git credentialsId: 'Github-Mitun', url: 'https://github.com/mitunmbj/dockerize-php-sample.git'
  		}
  	stage('Docker build') {
-  		sh "docker build --rm -f Dockerfile -t mitunacr.azurecr.io/Testphp:latest ."
+  		sh "docker build --rm -f Dockerfile -t mitunacr.azurecr.io/testphp:latest ."
 		}
     stage ('Push Docker Image'){
-        sh 'docker push mitunacr.azurecr.io/Testphp:latest'
-      	sh 'docker rmi  mitunacr.azurecr.io/Testphp:latest'
+        sh 'docker push mitunacr.azurecr.io/testphp:latest'
+      	sh 'docker rmi  mitunacr.azurecr.io/testphp:latest'
     }
 
  	stage('Deploy the container') {
-  		sh "ssh -t -t root@52.170.85.166 /root/deploy/deploy.sh"
+  		sh "ssh -t -t root@52.170.85.166 /root/deploy.sh"
  		}
 	}
