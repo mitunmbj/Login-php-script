@@ -1,31 +1,16 @@
-pipeline {
-    agent none
-    stages {
-        stage('Checkout') {
-            git credentialsId: 'Github-Mitun', url: 'https://github.com/mitunmbj/dockerize-php-sample.git'
-        }
-		
-	   stage('Docker Build') {
-            
-            steps {
-                startStage("Build")
-                sh "docker build -f Dockerfile -t  ."
-                endStage("Build")
-            }
-			}
-	   stage('Docker Push') {
-	         steps {
-                startStage("Pushing Docker image")
-                
-                sh "docker push Testphp-Image"
-                sh "docker rmi Testphp-Image"
-                endStage("Pushing Docker image")
-            } 
-			}
-	    stage('deploy') {
-		      steps {
-			     sh "ssh root@52.170.85.166 /root/deploy.sh"
-				 }
-				 }
-				 }
-				 }
+node {
+ 	stage('SCM checkout') {
+		git credentialsId: 'Github-Mitun', url: 'https://github.com/mitunmbj/dockerize-php-sample.git'
+ 		}
+ 	stage('Docker build') {
+  		sh "docker build --rm -f Dockerfile -t mitunacr.azurecr.io/Testphp:latest ."
+		}
+    stage ('Push Docker Image'){
+        sh 'docker push mitunacr.azurecr.io/Testphp:latest'
+      	sh 'docker rmi  mitunacr.azurecr.io/Testphp:latest'
+    }
+
+ 	stage('Deploy the container') {
+  		sh "ssh -t -t root@52.170.85.166 /root/deploy/deploy.sh"
+ 		}
+	}
