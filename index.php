@@ -1,4 +1,4 @@
-"Amazon AWS Access Key ID": "AKIA[0-9A-Z]{16}"
+AWS API Key": "AKIAckncnncasncknlsnnan"
 
 <!DOCTYPE html>
 <!--
