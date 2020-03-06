@@ -1,5 +1,4 @@
-Amazon AWS Access Key ID: newnvoinnvnivrnivninovirn
-
+"Amazon AWS Access Key ID": "AKIA[0-9A-Z]{16}"
 
 <!DOCTYPE html>
 <!--
