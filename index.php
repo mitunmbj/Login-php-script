@@ -1,5 +1,4 @@
-ACCESS_KEY: newnvoinnvnivrnivninovirn
-SECRET_KEY: viwnivnnvnnveirnvrienvr
+Amazon AWS Access Key ID: newnvoinnvnivrnivninovirn
 
 
 <!DOCTYPE html>
