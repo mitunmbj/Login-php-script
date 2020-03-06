@@ -1,3 +1,7 @@
+ACCESS_KEY: newnvoinnvnivrnivninovirn
+SECRET_KEY: viwnivnnvnnveirnvrienvr
+
+
 <!DOCTYPE html>
 <!--
 This is the index page of Launch EC2 Application.
