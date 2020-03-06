@@ -1,4 +1,4 @@
-AWS API Key": "AKIAckncnncasncknlsnnan"
+AWS API Key": AKIAIOSFODNN7EXAMPLE
 
 <!DOCTYPE html>
 <!--
