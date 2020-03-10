@@ -1,5 +1,3 @@
-AWS API Key": AKIAIOSFODNN7EXAMPLE
-
 <!DOCTYPE html>
 <!--
 This is the index page of Launch EC2 Application.
